@@ -1,0 +1,33 @@
+name: tests
+
+# Runs the fixture-based test suite (tests/) on every push/PR. Deliberately
+# lightweight: no real UM NetCDF data, no conda env - a plain `pip install`
+# of iris/aeolus/etc. resolves cleanly via prebuilt wheels, so a standard
+# actions/setup-python job is enough. Only runs pytest, not `ruff check`
+# repo-wide - ruff (which lints .ipynb too) still finds pre-existing
+# findings in notebooks/06_plt_ch4_co_paths_3d.ipynb (see README's
+# Notebooks/Plotting sections for why it's kept as-is, pre-refactor and
+# currently unrunnable); ruff stays available as a dev tool
+# (`pip install -e .[dev]`) in the meantime.
+#
+# `.[dev,viz]`, not just `.[dev]` - tests/test_viz.py needs matplotlib
+# (the `viz` extra); it skips itself via pytest.importorskip() if that
+# extra isn't installed, but CI should actually run it, not silently
+# skip it forever.
+
+on:
+  push:
+    branches: [main, package-refactor]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -e .[dev,viz]
+      - run: pytest

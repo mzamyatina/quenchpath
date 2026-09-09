@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quenchpath"
+version = "0.1.0"
+description = "CH4-to-CO chemical pathway analysis for hot Jupiter atmospheres"
+requires-python = ">=3.9"
+dependencies = [
+    "scitools-iris",
+    "aeolus",
+    "networkx",
+    "numpy",
+    "cf-units",
+    "pandas",
+    "stratify",
+    "click",
+    # Pin below iris's actual requirement: xxhash 4.0 (2026-08) made
+    # xxh64_hexdigest() reject plain str ("Strings must be encoded before
+    # hashing") - iris.common.metadata.hexdigest() calls it on a bare str
+    # in its fallback path and breaks on any cube arithmetic that compares
+    # attributes (e.g. Cube * Cube), still unfixed as of iris 3.16.0. Not
+    # a quenchpath dependency directly - xxhash is pulled in transitively
+    # by scitools-iris, which never pinned it itself.
+    "xxhash<4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff"]
+viz = ["matplotlib", "pyyaml"]
+
+[project.scripts]
+quenchpath = "quenchpath.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

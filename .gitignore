@@ -1,0 +1,23 @@
+# processed pipeline outputs - large, not tracked for now.
+/outputs/
+
+# one-off/exploratory scripts - not committed until we decide they're
+# worth keeping (e.g. promoting one into notebooks/ or a real script).
+/scratch/
+
+# symlink to raw model input, set up per-machine (see README's "External data")
+/inputs/raw_runs
+
+# Python
+__pycache__/
+*.egg-info/
+*.pyc
+.ipynb_checkpoints/
+
+# packaging
+build/
+dist/
+
+# macOS
+.DS_Store
+FILE_WALKTHROUGH.md
