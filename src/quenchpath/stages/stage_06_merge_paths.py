@@ -50,7 +50,7 @@ def merge_paths_to_cubes(locations, reference_cube):
     """What: merge already-loaded CH4-to-CO path location dicts into 5
     gridded iris Cubes on (level_height, latitude, longitude): temp
     [K], pres [Pa - that location's own true modelled pressure, not a
-    shared axis, see issue #11], path_index [dimensionless - see
+    shared axis, see quenchpath-apps issue #11], path_index [dimensionless - see
     assign_path_indices_from_locations()], net_rate_inv [cm3 s - the
     summed 1/rate across that location's whole path, i.e.
     find_pathway()'s own dijkstra-reported total - what path-finding

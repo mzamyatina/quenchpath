@@ -10,7 +10,7 @@ system you don't yet have priors about.
 - `build_bidirect_graph()` - admits both directions of every reaction,
   each weighted by its own real local rate.
 - Written after working this out for CH4<->CO on hot Jupiters (GitHub
-  issue #16) - that investigation is the worked example throughout.
+  quenchpath-apps issue #16) - that investigation is the worked example throughout.
 
 **Why three tiers, not one:** a graph construction "working" (finds a
 route, no errors, a plausible-looking success rate) is necessary but
@@ -66,7 +66,7 @@ it found the thing it's claiming to be."
    which way it's oriented, edge by edge - not just whether *some*
    path connects the endpoints.
    - Why this matters: a backbone that's fully connected one way but
-     missing a link the other way (issue #16 found `CO<->HCO` oriented
+     missing a link the other way (quenchpath-apps issue #16 found `CO<->HCO` oriented
      `HCO->CO` only, never the reverse, at a CO-favoured deep location)
      tells you a uni graph's "success" in the reverse direction there
      can only be an artifact - it has to be routing around the gap

@@ -191,7 +191,7 @@ def test_build_bidirect_graph_deduplicates_repeated_edges_per_direction():
 
 def test_find_pathway_needs_bidirect_graph_to_reverse_a_favoured_chain():
     # A->B->C, both reactions favouring forward (like a real CO-favouring
-    # location's CO<->HCO - see GitHub issue #16/scratch/probe_backbone_
+    # location's CO<->HCO - see quenchpath-apps issue #16/scratch/probe_backbone_
     # orientation.py): build_unidirect_graph() alone has no C->A route at all,
     # matching CO-to-CH4's real no-path failure mode; build_bidirect_graph()
     # recovers it via the disfavoured (1/rate_r-weighted) edges.
@@ -365,7 +365,7 @@ def test_find_pathway_simple_chain():
 
 
 def test_find_pathway_source_target_swap_walks_the_same_graph_the_other_way():
-    # GitHub issue #15 (CO-to-CH4): no build_unidirect_graph() change needed -
+    # quenchpath-apps issue #15 (CO-to-CH4): no build_unidirect_graph() change needed -
     # find_pathway() already takes source/target, and dijkstra on a
     # directed graph only ever traverses edges in their stored direction,
     # so a source="CO"/target="CH4" search on the exact same graph just

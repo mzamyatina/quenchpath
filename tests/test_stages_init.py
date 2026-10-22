@@ -1,6 +1,6 @@
 """Tests for quenchpath.stages' shared assert_mole_fraction()/
 assert_number_density() guards - in particular assert_number_density()'s
-optional `species=` check (added for GitHub issue #15: a genuine number
+optional `species=` check (added for quenchpath-apps issue #15: a genuine number
 density cube for the *wrong* gas has correct units and still contains
 "number density" in its name, so the bare check alone can't catch a
 CH4/CO mixup - see quenchpath.stages.stage_07_taus's own

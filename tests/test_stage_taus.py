@@ -4,7 +4,7 @@ on small synthetic cubes, independent of the real-data verification
 already performed for calc_and_save_adv_ls()/
 calc_and_save_adv_qn() themselves. Plus a direct
 regression test for _load_chem_rate_cubes()'s own species selection
-(GitHub issue #15's stage_07 fix: CH4 number density for CH4-to-CO, CO's
+(quenchpath-apps issue #15's stage_07 fix: CH4 number density for CH4-to-CO, CO's
 for CO-to-CH4 - a real physical requirement, not a relabeling, and the
 one call site assert_number_density()'s species= check exists to guard).
 """
@@ -149,7 +149,7 @@ def test_d_dphi_of_constant_field_is_near_zero():
 
 
 # ---------------------------------------------------------------------
-# _load_chem_rate_cubes(): species selection by conversion (issue #15)
+# _load_chem_rate_cubes(): species selection by conversion (quenchpath-apps issue #15)
 # ---------------------------------------------------------------------
 
 

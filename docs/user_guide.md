@@ -90,7 +90,7 @@ quenchpath run-pipeline-parallel --planet hd189733b --exp kin --grid-resolution 
   index, bottleneck-segment timescale, gridded on
   level_height/latitude/longitude).
   Why level_height, not pressure: pressure isn't a shared axis across
-  locations (see issue #11).
+  locations (see quenchpath-apps issue #11).
 
 **Measured wall time**, one planet through the full stage 03-07 matrix
 (both resolutions, both conversions, kin+equ), 16-core Apple M4 Max,

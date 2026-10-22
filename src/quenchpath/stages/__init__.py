@@ -42,7 +42,7 @@ def assert_number_density(cube, species=None):
     Why this matters more now: quenchpath.stages.stage_07_taus picks the
     species by quenchpath.config.SpeciesConversion (CH4 for CH4-to-CO,
     CO for CO-to-CH4) rather than a single hardcoded name - see GitHub
-    issue #15.
+    quenchpath-apps issue #15.
     """
     assert cube.units.is_convertible("cm-3") and "number density" in cube.name(), (
         f"{cube.name()!r} (units {cube.units}) isn't a number density cube - expected "

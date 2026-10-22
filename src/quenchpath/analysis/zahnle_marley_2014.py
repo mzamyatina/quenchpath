@@ -5,7 +5,7 @@ symmetry, not a like-for-like comparison on its own terms.
 
 Why tau_co_ch4_<rls|net> is the direct comparison: Zahnle & Marley's
 own fit is to CO->CH4 quench points specifically (see
-quench_level_zahnle_qn()'s own docstring/GitHub issue #15).
+quench_level_zahnle_qn()'s own docstring/quenchpath-apps issue #15).
 
 Currently just Zahnle & Marley (2014, ApJ 797, 41; arXiv:1408.6283)
 Eqs 12-14, the CO<->CH4 system timescale fit widely used as a

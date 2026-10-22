@@ -63,7 +63,7 @@ def test_mole_fraction_to_number_density_ignores_non_gas_cubes():
 
 def test_mole_fraction_to_number_density_passes_through_air_pressure_unchanged():
     # air_pressure is carried through as-is (needed downstream now that
-    # nothing relevels it away - see issue #11) - not recomputed, not
+    # nothing relevels it away - see quenchpath-apps issue #11) - not recomputed, not
     # relabeled onto a different grid.
     consts = init_const()
     raw_cubes = iris.load(DATA_DIR / "tiny_raw_run.nc")
@@ -76,7 +76,7 @@ def test_mole_fraction_to_number_density_passes_through_air_pressure_unchanged()
 
 
 def test_mole_fraction_to_number_density_preserves_input_grid_exactly():
-    # The whole point of dropping the relevel (issue #11): every output
+    # The whole point of dropping the relevel (quenchpath-apps issue #11): every output
     # cube must stay on exactly the same native vertical/lat/lon grid the
     # input cubes were already on - points AND bounds, not just shape.
     consts = init_const()

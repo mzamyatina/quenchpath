@@ -10,7 +10,7 @@ zahnle_marley_2014 are their own modules - one function/concept per
 module, downstream of quench_level() rather than folded into it.
 
 Why it exists: see quenchpath.analysis.k_test_over_k_eq for the check
-that originally motivated it (GitHub issue #16).
+that originally motivated it (quenchpath-apps issue #16).
 """
 
 import iris.analysis.maths
@@ -43,7 +43,7 @@ def quench_region(
     quenchpath.analysis.quench_level itself keeps them separate (see
     that module's own docstring).
 
-    What: originally built for GitHub issue #16's finding, specifically
+    What: originally built for quenchpath-apps issue #16's finding, specifically
     at `chem_kind="net"`/`adv_kind="qn"` (see
     quenchpath.analysis.k_test_over_k_eq's own module docstring).
     `conversion` defaults to CH4_CO for the same reason (that

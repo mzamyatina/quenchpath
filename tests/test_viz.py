@@ -437,7 +437,7 @@ class TestPathwayIndexLegendHandles:
     quenchpath.analysis.path_index.eqn_sequence_of()'s own empty-tuple
     return - now real, not just theoretical, once a CO-to-CH4 run's
     per-location NetworkXNoPath rate stopped being ~0% - see GitHub
-    issue #15)."""
+    quenchpath-apps issue #15)."""
 
     def test_labels_a_real_pathway_by_its_eqn_chain(self):
         path_index_map = {

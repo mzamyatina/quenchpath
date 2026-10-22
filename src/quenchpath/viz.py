@@ -10,7 +10,7 @@ from matplotlib.colors import ListedColormap
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
-from quenchpath.mypaths import path_to_plots
+from quenchpath.mypaths import path_to_data_root, path_to_plots
 
 # What: set mathtext.default="regular" once here, at import time.
 #
@@ -95,10 +95,18 @@ def save_figure(fig, figname):
     the combined legend (contour_legend + extra_legend_handles) grows
     large; a bigger `figsize` doesn't fix this, but expanding the saved
     PNG to fit the actual rendered content does.
+
+    What: prints the saved path relative to `path_to_data_root` (in full
+    if `path_to_plots` has been pointed outside it, as tests do).
+
+    Why: notebooks keep this line in their saved outputs, and an absolute
+    path would publish the local machine's directory layout.
     """
     out_path = path_to_plots / f"{figname}.png"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, bbox_inches="tight")
+    if out_path.is_relative_to(path_to_data_root):
+        out_path = out_path.relative_to(path_to_data_root)
     print(f"Saved {out_path}")
 
 
@@ -636,7 +644,7 @@ def plot_field_slices(
     fixed guess).
 
     Why: each planet/row's native grid reaches a different true
-    pressure at its top/bottom level (see issue #11).
+    pressure at its top/bottom level (see quenchpath-apps issue #11).
 
     What: `get_contour_panels(planet)`, if given, -> a list of 4
     entries (one per longitude panel), each either None or a list of
@@ -829,7 +837,7 @@ def plot_field_slices(
         ax[row, 0].set_title(row_title, loc="left")
     # Full pressure range actually present across every row plotted here
     # (not a fixed guess) - each planet/row's own native grid reaches a
-    # different true pressure at its top/bottom level (see issue #11), so
+    # different true pressure at its top/bottom level (see quenchpath-apps issue #11), so
     # a shared fixed range risks silently clipping some rows' data.
     for iax in ax.ravel():
         iax.set_ylim(pres_all_max, pres_all_min)

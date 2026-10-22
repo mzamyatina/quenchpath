@@ -24,7 +24,7 @@ import networkx as nx
 # What: see prune_to_carbon_subgraph(), which uses this to prune the
 # carbon-only subgraph - an edge whose reaction isn't a key here is
 # kept unquestioned; one that is a key but not in its list gets
-# removed. One known ambiguity - see GitHub issue #1.
+# removed. One known ambiguity - see quenchpath-apps issue #1.
 EQNS_W_FOUR_C = {
     "CH4+1CH2↔CH3+CH3": [("CH4", "CH3"), ("1CH2", "CH3")],
     "HCO+1CH2↔CH3+CO": [("HCO", "CO"), ("1CH2", "CH3")],
@@ -177,7 +177,7 @@ def build_bidirect_graph(eqns, nodes=None):
     every reaction - (reac->prod) weighted 1/rate_f AND (prod->reac)
     weighted 1/rate_r - rather than only whichever k_eq favours.
 
-    Why (GitHub issue #16, for a CO-to-CH4 search specifically):
+    Why (quenchpath-apps issue #16, for a CO-to-CH4 search specifically):
     build_unidirect_graph() orients each edge by k_eq alone, a purely
     thermodynamic (abundance-independent) quantity - at a real
     CO-favouring location this leaves CO with no forward edge into C-H-O
@@ -321,7 +321,7 @@ def find_pathway(SG_tidy, source="CH4", target="CO"):
 
     Path-finding picks the path whose seg_rate_inv values SUM to the
     smallest total - not whose slowest step is fastest (a different
-    "bottleneck path" problem dijkstra doesn't solve; see issue #14).
+    "bottleneck path" problem dijkstra doesn't solve; see quenchpath-apps issue #14).
     seg_rate_inv only becomes a per-step "how slow" figure downstream
     (e.g. plot edge coloring).
 
@@ -353,7 +353,7 @@ def find_pathway(SG_tidy, source="CH4", target="CO"):
         seg_rate_inv across the path - see above); max_rate_inv [cm3 s]
         is the slowest (bottleneck) segment's own seg_rate_inv along
         that same path - the "bottleneck path" quantity dijkstra itself
-        doesn't optimize for (see issue #14), computed here anyway since
+        doesn't optimize for (see quenchpath-apps issue #14), computed here anyway since
         it's one max() over segments dijkstra already found (both are in
         cm3 s since rate_f/rate_r, and so seg_rate_inv = 1/rate, are in
         cm-3 s-1 - see quenchpath.stages.stage_04_rates). `nodes` is the

@@ -240,7 +240,7 @@ def merge_h_ch3_ch4_special_case(eqns, temp, all_gases_nd):
 
     What: whether summing rate coefficients is the right way to
     reconcile these two independently-fit duplicate entries (vs. e.g.
-    picking one) is an open question - see issue #13.
+    picking one) is an open question - see quenchpath-apps issue #13.
 
     Why trust this merge anyway: it does preserve detailed balance
     exactly (checked empirically, not just algebraically), and the two

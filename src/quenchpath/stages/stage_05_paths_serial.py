@@ -82,7 +82,7 @@ def select_grid(temp_cube, grid_resolution):
     instead (`pres_arr[hgt_idx, lat_idx, lon_idx]` in calc_paths_serial()).
 
     Why not pressure as the vertical axis: real per-column pressure
-    isn't a shared axis (see issue #11).
+    isn't a shared axis (see quenchpath-apps issue #11).
 
     Returns
     -------
@@ -149,7 +149,7 @@ def calc_paths_serial(
 
     Yields one location dict per location ("pres" is that location's own
     true modelled pressure - this can differ substantially between
-    locations at the same hgt_idx, see issue #11); each level's locations
+    locations at the same hgt_idx, see quenchpath-apps issue #11); each level's locations
     are also saved to disk together as one JSON Lines file
     (quenchpath.io.save_paths_level(), whose header line carries
     that level's hgt_idx/hgt) once that level completes.

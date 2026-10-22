@@ -24,7 +24,7 @@ class SpeciesConversion(str, Enum):
     Why CO_CH4 exists: added for a like-for-like comparison against
     Zahnle & Marley (2014)'s CO->CH4-fit literature quench timescale
     (see quenchpath.analysis.zahnle_marley_2014's own module docstring;
-    GitHub issue #15).
+    quenchpath-apps issue #15).
 
     Why not named *Direction: a real, separate "direction" concept
     already exists one level down (a single reaction's own
@@ -59,7 +59,7 @@ class SpeciesConversion(str, Enum):
     its own real rate).
 
     Why: see build_bidirect_graph()'s own docstring for why CH4_CO
-    can't use it too and why CO_CH4 needs it (GitHub issue #16), and
+    can't use it too and why CO_CH4 needs it (quenchpath-apps issue #16), and
     docs/uni_vs_bidirectional_pathway_search.md for the fuller
     methodology writeup.
     """

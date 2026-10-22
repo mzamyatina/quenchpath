@@ -411,7 +411,7 @@ def test_quench_level_zahnle_qn_divides_tco_by_tau_adv_qn(tmp_path, monkeypatch,
 def test_quench_level_zahnle_qn_conversion_picks_the_right_species(
     tmp_path, monkeypatch, cfg, conversion
 ):
-    # GitHub issue #22 (fixed): quench_level_zahnle_qn() used to have no
+    # quenchpath-apps issue #22 (fixed): quench_level_zahnle_qn() used to have no
     # conversion parameter at all, always loading CH4's own tau_adv_qn
     # regardless of what a caller was actually analysing. Only
     # `conversion.source`'s own species file is ever saved here - the

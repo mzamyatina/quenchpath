@@ -6,7 +6,7 @@ from w/temp/pres/mf's shared native grid both vertically and
 horizontally (longitude for u, latitude for v; `mf` is whichever
 species' mole fraction - CH4 by default, CO for a CO_CH4 conversion,
 see _load_raw_run_fields()). That's the one relevelling this stage
-can't avoid (issue #11): u/v (and mf's own ln() derivatives, regridded
+can't avoid (quenchpath-apps issue #11): u/v (and mf's own ln() derivatives, regridded
 back onto the shared grid to undo float drift picked up from
 d_dlambda()/d_dphi()'s internal unit-conversion side effects) get
 regridded onto temp's grid; w/temp/pres/mf themselves stay untouched.
@@ -731,7 +731,7 @@ def calc_chem_timescale(cfg, grid_resolution, chem_kind, conversion=SpeciesConve
     physical definition, so the CO-to-CH4 timescale is scaled by the
     CO/CH4 number-density ratio relative to the CH4-to-CO one, on top of
     using CO-to-CH4's own (generally different) pathway/rate (see
-    GitHub issue #15).
+    quenchpath-apps issue #15).
 
     What: computed as genuine Cube arithmetic
     (`rate_inv_cube * source_nd`), not plain numpy arrays.

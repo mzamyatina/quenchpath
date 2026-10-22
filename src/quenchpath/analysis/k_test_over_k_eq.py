@@ -8,7 +8,7 @@ single reaction's own k_eq-favoured orientation (see
 quenchpath.graph.shortest_path.build_unidirect_graph()/
 build_bidirect_graph(), which orient per-edge).
 
-Why ch4_co_k_test_over_k_eq() exists (GitHub issue #16): quenchpath's
+Why ch4_co_k_test_over_k_eq() exists (quenchpath-apps issue #16): quenchpath's
 own CH4-to-CO pathway search assumes CH4->CO is the net-favoured
 direction at/below the CH4 quench level - this function checks that
 assumption directly instead of just asserting it.
@@ -17,7 +17,7 @@ Finding: holds on 7 of 8 real planet/mdh/tK configs except in a narrow
 band right at the CH4 quench region (see
 quenchpath.analysis.quench_region.quench_region()), where the net
 direction can genuinely flip to CO->CH4. Investigation history: GitHub
-issue #16's own comment thread (closed).
+quenchpath-apps issue #16's own comment thread (closed).
 """
 
 import json
