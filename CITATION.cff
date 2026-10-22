@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use quenchpath, please cite the paper below and this software."
+title: quenchpath
+version: 0.1.0
+license: MIT
+repository-code: https://github.com/mzamyatina/quenchpath
+authors:
+  - family-names: Zamyatina
+    given-names: Maria
+    orcid: https://orcid.org/0000-0002-9705-0535
+preferred-citation:
+  type: article
+  title: "Spatial variability of CH4-to-CO conversion pathways in irradiated gas giant atmospheres: implications for chemical relaxation and 1D quench schemes"
+  journal: Monthly Notices of the Royal Astronomical Society
+  year: 2026
+  status: in-press
+  authors:
+    - family-names: Zamyatina
+      given-names: Maria
+      orcid: https://orcid.org/0000-0002-9705-0535
+    - family-names: Hébrard
+      given-names: Éric
+      orcid: https://orcid.org/0000-0003-0770-7271
+    - family-names: Baskett
+      given-names: Harry
+      orcid: https://orcid.org/0009-0003-1097-5792
+    - family-names: Veillet
+      given-names: Roméo
+      orcid: https://orcid.org/0009-0007-2485-0308
+    - family-names: Christie
+      given-names: Duncan A.
+      orcid: https://orcid.org/0000-0002-4997-0847
+    - family-names: Mayne
+      given-names: Nathan J.
+      orcid: https://orcid.org/0000-0001-6707-4563
+    - family-names: Sergeev
+      given-names: Denis E.
+      orcid: https://orcid.org/0000-0001-8832-5288
+    - family-names: Kohary
+      given-names: Krisztian
+      orcid: https://orcid.org/0000-0003-0165-4885

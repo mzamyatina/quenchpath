@@ -5,8 +5,7 @@ Circulation Model (Unified Model) run's 3D wind/temperature/composition
 fields and the Venot et al. (2019) reduced chemical network, quenchpath
 finds the dominant reaction pathway converting CH4 to CO (or, via
 `--conversion co_ch4`, CO to CH4) at every grid location, and the
-advection/quenching timescales that determine where disequilibrium
-("quenched") chemistry sets in.
+pathway and advection timescales whose crossing sets the quench level.
 
 ## Example output
 
@@ -61,3 +60,14 @@ ruff check .
 Tests are fixture-based (tiny synthetic or sliced-real-data fixtures under
 `tests/data/`, no multi-GB UM files) so they run fast in CI on every push -
 see `tests/conftest.py` and `.github/workflows/tests.yml`.
+
+## Citing
+
+If you use quenchpath, please cite Zamyatina et al. (2026, MNRAS,
+accepted) and the software itself - see `CITATION.cff`, or GitHub's
+"Cite this repository" button.
+
+The bundled Venot et al. (2019) reduced chemical network
+(`inputs/raw_networks/venot2019/`) is taken from the KIDA database
+(https://kida.astrochem-tools.org) and is not covered by this
+repository's MIT licence; please cite Venot et al. (2019) if you use it.
