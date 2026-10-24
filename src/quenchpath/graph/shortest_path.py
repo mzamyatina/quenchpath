@@ -321,7 +321,7 @@ def find_pathway(SG_tidy, source="CH4", target="CO"):
 
     Path-finding picks the path whose seg_rate_inv values SUM to the
     smallest total - not whose slowest step is fastest (a different
-    "bottleneck path" problem dijkstra doesn't solve; see quenchpath-apps issue #14).
+    "bottleneck path" problem dijkstra doesn't solve; see issue #5).
     seg_rate_inv only becomes a per-step "how slow" figure downstream
     (e.g. plot edge coloring).
 
@@ -353,7 +353,7 @@ def find_pathway(SG_tidy, source="CH4", target="CO"):
         seg_rate_inv across the path - see above); max_rate_inv [cm3 s]
         is the slowest (bottleneck) segment's own seg_rate_inv along
         that same path - the "bottleneck path" quantity dijkstra itself
-        doesn't optimize for (see quenchpath-apps issue #14), computed here anyway since
+        doesn't optimize for (see issue #5), computed here anyway since
         it's one max() over segments dijkstra already found (both are in
         cm3 s since rate_f/rate_r, and so seg_rate_inv = 1/rate, are in
         cm-3 s-1 - see quenchpath.stages.stage_04_rates). `nodes` is the
